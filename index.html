@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>VitraLuz</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #59D9D9; /* Aqua cristal */
+      color: #3A4650; /* Gris oscuro */
+      overflow: hidden;
+    }
+
+    /* Intro */
+    #intro {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 9999;
+    }
+
+    .intro-logo-title {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo-intro {
+      height: 100px;
+      width: auto;
+    }
+
+    #intro h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4em;
+      background: linear-gradient(90deg, #57ADC1, #9DD1DF, #CBECEF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite alternate;
+      cursor: pointer;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #57ADC1; }
+      to { text-shadow: 0 0 30px #CBECEF; }
+    }
+
+    canvas {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: #CBECEF;
+    }
+
+    header nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #3A4650;
+      font-weight: bold;
+    }
+
+    .consulta-btn {
+      background: #57ADC1;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5em;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin: 20px 0;
+    }
+
+    .hero button {
+      margin: 10px;
+      padding: 10px 20px;
+      background: #57ADC1;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Secciones */
+    section {
+      padding: 60px 20px;
+    }
+
+    .personalizados {
+      background: #9DD1DF;
+      text-align: center;
+    }
+
+    .sobre-mi {
+      text-align: center;
+      background: #CBECEF;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .galeria div {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .galeria div:hover .info {
+      opacity: 1;
+    }
+
+    .info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(87,173,193,0.9);
+      color: white;
+      padding: 10px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <!-- Intro con partículas -->
+  <div id="intro">
+    <canvas id="particles"></canvas>
+    <div class="intro-logo-title">
+      <img src="imagenes/logo.jpeg" alt="Logo VitraLuz" class="logo-intro">
+      <h1 id="title">VitraLuz</h1>
+    </div>
+    <p style="color:#CBECEF;">Haz clic en el título o logo para entrar</p>
+  </div>
+
+  <!-- Contenido principal -->
+  <div id="main" style="display:none;">
+    <header>
+      <div class="logo">
+        <img src="imagenes/logo.jpeg" alt="Logo VitraLuz" width="120">
+      </div>
+      <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Piezas</a>
+        <a href="#">Personalizados</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#">Contacto</a>
+      </nav>
+      <a href="#" class="consulta-btn">🛒 consulta</a>
+    </header>
+
+    <section class="hero">
+      <h2>Arte en vidrio que transforma espacios</h2>
+      <p>Cada pieza es creada artesanalmente, fusionando luz, color y diseño para hacer de cada ambiente un lugar único.</p>
+      <button>Ver piezas</button>
+      <button>Pedir diseño personalizado</button>
+    </section>
+
+    <section class="personalizados">
+      <h3>Diseños Personalizados</h3>
+      <p>¿Tienes un color o dibujo que quieras?<br>Realizo piezas únicas adaptadas a tus gustos y espacios.</p>
+      <button>Solicitar presupuesto</button>
+    </section>
+
+    <section id="sobre-mi" class="sobre-mi">
+      <h3>Sobre VitraLuz</h3>
+      <img src="imagenes/rita-trabajando.jpg" alt="Rita Arguello trabajando" width="300">
+      <p>
+        Soy Rita Arguello y cada pieza está creada con dedicación, fusionando vidrio y diseño para transformar espacios y momentos especiales.<br><br>
+        En VitraLuz vas a encontrar:<br>
+        ✨ decoración artesanal<br>
+        ✨ piezas únicas<br>
+        ✨ regalos especiales<br>
+        ✨ arte en vitrofusión<br><br>
+        Cada creación refleja transparencia, brillo y armonía, utilizando una paleta inspirada en el agua, el cristal y la luz 💙<br><br>
+        Gracias por acompañarme en este nuevo comienzo 🤍
+      </p>
+    </section>
+
+    <section class="galeria">
+      <div>
+        <img src="imagenes/pieza1.jpg" alt="Pieza 1" width="100%">
+        <div class="info">Pieza 1 - $100 <button>Consultar</button></div>
+      </div>
+      <div>
+        <img src="imagenes/pieza2.jpg" alt="Pieza 2" width="100%">
+        <div class="info">Pieza 2 - $150 <button>Consultar</button></div>
+      </div>
+      <!-- Más piezas -->
+    </section>
+  </div>
+
+  <script>
+    // Partículas simples
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particles = [];
+    for(let i=0;i<100;i++){
+      particles.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        r: Math.random()*3+2,
+        dx: (Math.random()-0.5)*2,
+        dy: (Math.random()-0.5)*2,
+        color: ['#3A4650','#57ADC1','#9DD1DF','#CBECEF'][Math.floor(Math.random()*4)]
+      });
+    }
+
+    function draw(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      particles.forEach(p=>{
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle=p.color;
+        ctx.fill();
+        p.x+=p.dx;
+        p.y+=p.dy;
+        if(p.x<0||p.x>canvas.width) p.dx*=-1;
+        if(p.y<0||p.y>canvas.height) p.dy*=-1;
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+
+    // Evento click para entrar
+    document.querySelector('.intro-logo-title').addEventListener('click',()=>{
+      document.getElementById('intro').style.display='none';
+      document.getElementById('main').style.display='block';
+    });
+  </script>
+</body>
+</html>
