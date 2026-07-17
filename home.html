@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VitraLuz · Arte en vidrio que transforma espacios</title>
+<meta name="description" content="VitraLuz: arte en vidrio artesanal por Rita Arguello. Piezas únicas de luz y color desde Balnearia, Córdoba." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          serif: ['"Playfair Display"', 'Georgia', 'serif'],
+          sans: ['Inter', 'system-ui', 'sans-serif'],
+        },
+        colors: {
+          'vitra-sand': '#fafaf9',
+          'vitra-glass': '#f0f9ff',
+          'vitra-deep': '#0c4a6e',
+          'vitra-accent': '#7dd3fc',
+
+        },
+      },
+    },
+  };
+</script>
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; }
+  .ph { background: linear-gradient(135deg, #e0f2fe, #fef3c7); }
+</style>
+</head>
+<body class="min-h-screen bg-vitra-sand text-vitra-deep">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-vitra-deep/5">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="text-2xl font-serif font-bold tracking-tight">VitraLuz</a>
+      <nav class="hidden lg:flex items-center space-x-8 text-xs font-medium uppercase tracking-widest">
+        <a href="#" class="hover:text-vitra-accent transition-colors">Inicio</a>
+        <a href="#colecciones" class="hover:text-vitra-accent transition-colors">Colecciones</a>
+        <a href="#personalizados" class="hover:text-vitra-accent transition-colors">Personalizados</a>
+        <a href="#sobre" class="hover:text-vitra-accent transition-colors">Sobre mí</a>
+        <a href="#galeria" class="hover:text-vitra-accent transition-colors">Tienda</a>
+        <a href="#contacto" class="hover:text-vitra-accent transition-colors">Contacto</a>
+      </nav>
+      <a href="#galeria" class="bg-vitra-deep text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-vitra-deep/90 transition shadow-lg shadow-vitra-deep/10 inline-flex items-center gap-2">
+        🛒 Comprar ahora
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative py-20 px-6">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8">
+        <h1 class="text-5xl md:text-7xl font-serif leading-[1.05] italic">
+          Arte en vidrio que <span class="text-vitra-accent not-italic">transforma</span> espacios
+        </h1>
+        <p class="text-lg text-vitra-deep/70 max-w-lg leading-relaxed">
+          Cada pieza es creada artesanalmente, fusionando luz, color y diseño para hacer de cada ambiente un lugar único.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#colecciones" class="px-8 py-4 bg-vitra-deep text-white rounded-full font-medium hover:shadow-xl transition">Ver colección</a>
+          <a href="#personalizados" class="px-8 py-4 border border-vitra-deep/20 rounded-full font-medium hover:bg-vitra-glass transition">Pedir diseño personalizado</a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="w-full aspect-square rounded-[4rem] shadow-2xl outline outline-black/5 overflow-hidden ph flex items-center justify-center">
+          <span class="text-xs uppercase tracking-widest text-vitra-deep/40">Foto pieza principal</span>
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-white/80 backdrop-blur-xl p-6 rounded-2xl shadow-xl border border-white/50 max-w-[16rem]">
+          <p class="text-sm font-serif italic">"La luz es mi pincel."</p>
+          <p class="text-xs uppercase tracking-widest mt-2 text-vitra-accent">Rita Arguello</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Colecciones -->
+  <section id="colecciones" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-serif mb-12 text-center">Colecciones destacadas</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <a href="#" class="group block">
+          <div class="aspect-[4/5] rounded-3xl mb-4 ph border border-vitra-deep/5 group-hover:scale-[1.02] transition-transform duration-500"></div>
+          <h3 class="text-xl font-medium">Cuadros en vidrio</h3>
+        </a>
+        <a href="#" class="group block">
+          <div class="aspect-[4/5] rounded-3xl mb-4 ph border border-vitra-deep/5 group-hover:scale-[1.02] transition-transform duration-500"></div>
+          <h3 class="text-xl font-medium">Decoración para el hogar</h3>
+        </a>
+        <a href="#" class="group block">
+          <div class="aspect-[4/5] rounded-3xl mb-4 ph border border-vitra-deep/5 group-hover:scale-[1.02] transition-transform duration-500"></div>
+          <h3 class="text-xl font-medium">Regalos personalizados</h3>
+        </a>
+        <a href="#" class="group block">
+          <div class="aspect-[4/5] rounded-3xl mb-4 ph border border-vitra-deep/5 group-hover:scale-[1.02] transition-transform duration-500"></div>
+          <h3 class="text-xl font-medium">Piezas exclusivas</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personalizados -->
+  <section id="personalizados" class="py-24 bg-vitra-glass relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <h2 class="text-4xl md:text-5xl font-serif mb-6">¿Tenés una idea especial?</h2>
+      <p class="text-lg mb-10 text-vitra-deep/70 italic">Realizo piezas únicas adaptadas a tus gustos y espacios.</p>
+      <a href="#contacto" class="inline-block px-10 py-4 bg-white border border-vitra-deep/10 text-vitra-deep rounded-full font-semibold shadow-xl hover:-translate-y-1 transition">Solicitar presupuesto</a>
+    </div>
+    <div class="absolute top-0 right-0 w-64 h-64 bg-vitra-accent/30 rounded-full blur-3xl -mr-32 -mt-32"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-vitra-accent/30 rounded-full blur-3xl -ml-32 -mb-32"></div>
+  </section>
+
+  <!-- Sobre VitraLuz -->
+  <section id="sobre" class="py-24">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <div class="w-full aspect-[3/4] rounded-3xl ph flex items-center justify-center">
+        <span class="text-xs uppercase tracking-widest text-vitra-deep/40">Foto de Rita</span>
+      </div>
+      <div class="space-y-6">
+        <span class="uppercase tracking-[0.2em] text-xs font-semibold text-vitra-accent">Sobre VitraLuz</span>
+        <h2 class="text-4xl md:text-5xl font-serif">Rita Arguello</h2>
+        <p class="text-lg leading-relaxed text-vitra-deep/80">
