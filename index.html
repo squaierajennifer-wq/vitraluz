@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>VitraLuz</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Cormorant Garamond', serif;
+      background: black;
+      color: white;
+    }
+
+    /* Pantalla de inicio */
+    #intro {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+    }
+
+    #intro h1 {
+      font-size: 4em;
+      cursor: pointer;
+      background: linear-gradient(90deg, #59D9D9, #4BA3F2, #7ED9C4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: brillo 2s infinite alternate;
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes brillo {
+      from { opacity: 0.7; }
+      to { opacity: 1; }
+    }
+
+    #intro p {
+      z-index: 2;
+    }
+
+    /* Canvas para partículas */
+    #particles {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 1;
+    }
+
+    /* Contenido principal oculto al inicio */
+    #contenido {
+      display: none;
+      text-align: center;
+      padding: 50px;
+      background-color: #59D9D9;
+      min-height: 100vh;
+    }
+
+    #contenido h2 {
+      font-family: 'Playfair Display', serif;
+      color: #3A4650;
+    }
+  </style>
+</head>
+<body>
+  <!-- Intro -->
+  <div id="intro">
+    <canvas id="particles"></canvas>
+    
+    <a href="home.html"><h1 onclick="entrar()">VitraLuz</h1></a>
+    <p>Toca el título para entrar</p>
+  </div>
+
+  <!-- Contenido principal -->
+  <div id="contenido">
+    <h2>Bienvenida a VitraLuz</h2>
+    <p>Arte en vidrio que transforma espacios ✨</p>
+  </div>
+
+  <script>
+    // Partículas estilo cristales
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const colores = ['#3A4650','#57ADC1','#9DD1DF','#CBECEF'];
+    const particulas = [];
+
+    class Particula {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 4 + 2;
+        this.color = colores[Math.floor(Math.random() * colores.length)];
+        this.velX = (Math.random() - 0.5) * 1.5;
+        this.velY = (Math.random() - 0.5) * 1.5;
+      }
+      update() {
+        this.x += this.velX;
+        this.y += this.velY;
+        if(this.x < 0 || this.x > canvas.width) this.velX *= -1;
+        if(this.y < 0 || this.y > canvas.height) this.velY *= -1;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
+
+    function init() {
+      for(let i=0; i<80; i++) {
+        particulas.push(new Particula());
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      particulas.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+
+    init();
+    animate();
+
+    // Función para entrar
+    function entrar() {
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('contenido').style.display = 'block';
+    }
+
+    // Ajustar tamaño al cambiar ventana
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
