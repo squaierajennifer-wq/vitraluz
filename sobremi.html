@@ -1,0 +1,433 @@
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VitraLuz | Sobre nosotros</title>
+
+
+<style>
+
+:root{
+
+--aqua:#59D9D9;
+--azul-cristal:#4BA3F2;
+--verde-agua:#7ED9C4;
+--blanco:#F8FCFC;
+--gris:#5E6A73;
+
+}
+
+
+*{
+box-sizing:border-box;
+}
+
+
+body{
+
+margin:0;
+font-family:Arial,sans-serif;
+background:var(--blanco);
+color:var(--gris);
+
+}
+
+
+
+/* ENCABEZADO */
+
+header{
+
+background:linear-gradient(
+135deg,
+var(--aqua),
+var(--azul-cristal)
+);
+
+padding:40px 20px;
+text-align:center;
+color:white;
+
+}
+
+
+header img{
+
+width:130px;
+background:white;
+padding:10px;
+border-radius:50%;
+
+}
+
+
+header h1{
+
+font-size:clamp(35px,8vw,55px);
+margin:15px 0 5px;
+
+}
+
+
+header p{
+
+font-size:20px;
+
+}
+
+
+
+/* CONTENIDO */
+
+
+.contenedor{
+
+max-width:1000px;
+margin:auto;
+padding:40px 20px;
+
+}
+
+
+
+.titulo{
+
+text-align:center;
+color:var(--azul-cristal);
+font-size:35px;
+
+}
+
+
+
+.presentacion{
+
+display:flex;
+gap:40px;
+align-items:center;
+margin-top:40px;
+
+}
+
+
+
+.presentacion img{
+
+width:320px;
+height:320px;
+object-fit:cover;
+border-radius:25px;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,.2);
+
+}
+
+
+
+.texto{
+
+font-size:18px;
+line-height:1.7;
+
+}
+
+
+
+/* PRODUCTOS */
+
+
+.productos{
+
+background:white;
+padding:30px;
+margin-top:40px;
+border-radius:25px;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,.15);
+
+}
+
+
+.productos h2{
+
+color:var(--azul-cristal);
+
+}
+
+
+.lista{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+
+}
+
+
+.item{
+
+background:#F8FCFC;
+padding:15px;
+border-radius:15px;
+font-weight:bold;
+
+}
+
+
+
+/* BOTON */
+
+
+.boton{
+
+display:block;
+width:max-content;
+margin:40px auto;
+
+background:var(--azul-cristal);
+color:white;
+
+text-decoration:none;
+
+padding:15px 35px;
+
+border-radius:30px;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+
+.boton:hover{
+
+background:var(--aqua);
+
+}
+
+
+
+/* FOOTER */
+
+
+footer{
+
+background:var(--gris);
+color:white;
+
+text-align:center;
+padding:25px;
+
+}
+
+
+
+/* CELULAR */
+
+
+@media(max-width:700px){
+
+
+.presentacion{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+
+.presentacion img{
+
+width:250px;
+height:250px;
+
+}
+
+
+.texto{
+
+font-size:16px;
+
+}
+
+}
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+
+<img src="logo-vitraluz.png" alt="Logo VitraLuz">
+
+
+<h1>VitraLuz</h1>
+
+
+<p>
+Arte en vidrio inspirado en la luz, el color y la creatividad
+</p>
+
+
+</header>
+
+
+
+
+<section class="contenedor">
+
+
+<h2 class="titulo">
+Sobre VitraLuz
+</h2>
+
+
+
+<div class="presentacion">
+
+
+<img src="rita-arguello.jpg" alt="Rita Arguello creadora de VitraLuz">
+
+
+
+<div class="texto">
+
+
+<p>
+
+Soy Rita Arguello y cada pieza está creada con dedicación,
+fusionando vidrio y diseño para transformar espacios y momentos especiales.
+
+</p>
+
+
+<p>
+
+En VitraLuz vas a encontrar:
+
+<br>
+✨ Decoración artesanal
+<br>
+✨ Piezas únicas
+<br>
+✨ Regalos especiales
+<br>
+✨ Arte en vitrofusión
+
+</p>
+
+
+
+<p>
+
+Cada creación refleja transparencia, brillo y armonía,
+utilizando una paleta inspirada en el agua, el cristal y la luz 💙
+
+</p>
+
+
+<p>
+
+Gracias por acompañarme en este nuevo comienzo 🤍
+
+</p>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="productos">
+
+
+<h2>
+En VitraLuz se realizan:
+</h2>
+
+
+<div class="lista">
+
+
+<div class="item">✨ Fuentes</div>
+
+<div class="item">✨ Llamadores de ángeles</div>
+
+<div class="item">✨ Platos</div>
+
+<div class="item">✨ Apoya tazas</div>
+
+<div class="item">✨ Porta sahumerios</div>
+
+<div class="item">✨ Platos para porciones de pizza</div>
+
+<div class="item">✨ Joyeros</div>
+
+<div class="item">✨ Porta velas</div>
+
+<div class="item">✨ Y mucho más 🎨</div>
+
+
+</div>
+
+
+
+<p>
+
+Personalizados en colores disponibles y diseños simples,
+únicos y realizados artesanalmente.
+
+</p>
+
+
+</div>
+
+
+
+<a class="boton" href="index.html">
+⬅ Volver a la página principal
+</a>
+
+
+
+</section>
+
+
+
+
+<footer>
+
+<p>
+VitraLuz | Arte en vidrio artesanal
+</p>
+
+<p>
+Rita Arguello
+</p>
+
+
+</footer>
+
+
+
+</body>
+
+</html>
